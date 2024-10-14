@@ -1,0 +1,26 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    padding-inline: 6rem;
+    align-items: center;
+    /*background-color:#cb202d;*/
+    border-bottom:1px solid black;
+    /*color: white;*/
+}
+.header-logo{
+    width:8rem;
+    height:8rem;
+}
+
+.header-logo img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.header-nav-items ul{
+    display: flex;
+    gap: 3rem;
+    font-size: 1.4rem;
+    list-style-type: none;
+}
