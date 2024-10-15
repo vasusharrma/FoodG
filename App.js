@@ -9,6 +9,8 @@ import ReactDOM from 'react-dom/client';
 *   - search
 *   - restroConatainer
 *       -restroCard
+*           -img
+*           -Names of restaurent , Star Rating , cuisine , delivery date
 * Fotter
 *   -Address
 *   -Copyright
@@ -34,16 +36,56 @@ const Header = () => {
     )
 }
 
-// const Body = () => {
-//     return(
-//
-//     )
-// }
-//
+const Fa_Cards = () => {
+    return(
+        <div className="fa_card">
+            <div className="fa_card_img">
+                <img alt='fa-image' src='https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_600/86fdb4a4c99ab1e9988b1bc75d0feffe'/>
+            </div>
+            <h3>Red Chilli</h3>
+            <h5>Kaju Katli , Roorkee , North India</h5>
+            <div className="fa_card_ratings">
+                <h5>4.5 ⋆ </h5><h5> 15 minutes</h5>
+            </div>
+        </div>
+    )
+}
+
+const Body = () => {
+    return(
+        <div className="fa_body">
+           <div className="fa_serach">
+              Search
+           </div>
+            <div className="fa_container">
+               <Fa_Cards />
+                <Fa_Cards />
+                <Fa_Cards />
+                <Fa_Cards />
+                <Fa_Cards />
+                <Fa_Cards />
+                <Fa_Cards />
+                <Fa_Cards />
+                <Fa_Cards />
+                <Fa_Cards />
+                <Fa_Cards />
+                <Fa_Cards />
+                <Fa_Cards />
+                <Fa_Cards />
+                <Fa_Cards />
+                <Fa_Cards />
+                <Fa_Cards />
+                <Fa_Cards />
+            </div>
+        </div>
+    )
+}
+
 const App = () =>{
     return (
         <div className="app">
             <Header/>
+            <Body />
         </div>
     )
 }
