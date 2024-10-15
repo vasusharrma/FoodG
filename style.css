@@ -3,6 +3,12 @@
     min-height: 100vh;
 }
 
+.theme_accent{
+    /*color:#ee6d41;*/
+    /*color:gray;*/
+    font-weight: bolder;
+}
+
 .header{
     display: flex;
     justify-content: space-between;
@@ -37,11 +43,13 @@
     display: flex;
     flex-wrap: wrap;
     gap:3rem;
-    padding-block:2rem
+    padding-block:2rem;
+    justify-content: center;
 }
 
+
 .fa_card{
-    width:15rem;
+    width:18rem;
     background-color:white;
     border-radius: 0.5rem;
     padding:0.5rem;
