@@ -47,6 +47,32 @@
     justify-content: center;
 }
 
+.fa_serach{
+    display: flex;
+    justify-content: space-around;
+    alignitems: center;
+}
+
+.topResBtnDiv{
+
+    display: flex;
+    justify-content: center;
+}
+
+.resBtn{
+    border:none;
+    padding:0.8rem 1.2rem;
+    background-color: white;
+    cursor:pointer;
+    position: relative;
+    transition: all linear 300ms;
+}
+
+.resBtn:hover{
+    background-color: #ee6d41;
+    color:white;
+}
+
 
 .fa_card{
     width:18rem;
