@@ -5,6 +5,7 @@ import {useState , useEffect} from "react";
 const Body = () => {
 
     const[bodyfaData , setBodyfaData] = useState([]);
+    const[initialBodyfaData , setInitialBodyfaData] = useState([]);
 
     useEffect(()=>{
         fetchCards();
@@ -13,27 +14,20 @@ const Body = () => {
 
     const fetchCards = async () =>{
         const fetchedData = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.65420&lng=77.23730&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING ");
-        console.log("hellogi");
         const fetchedDataJson = await fetchedData.json();
-        console.log("fetcehd data" , fetchedDataJson.data.cards[4].card.card.gridElements.infoWithStyle.restaurants[0].info);
-        console.log("fetcehd data" , fetchedDataJson.data.cards[4].card.card.gridElements.infoWithStyle.restaurants[1].info.name);
-        console.log("fetcehd data" , fetchedDataJson.data.cards[4].card.card.gridElements.infoWithStyle.restaurants[0].info.avgRating);
-        console.log("fetcehd data" , fetchedDataJson.data.cards[4].card.card.gridElements.infoWithStyle.restaurants[0].info.cloudinaryImageId);
-        console.log("fetcehd data" , fetchedDataJson.data.cards[4].card.card.gridElements.infoWithStyle.restaurants[0].info.id);
-        console.log("fetcehd data" , fetchedDataJson.data.cards[4].card.card.gridElements.infoWithStyle.restaurants[0].info.costForTwo);
-        console.log("fetcehd data" , fetchedDataJson.data.cards[4].card.card.gridElements.infoWithStyle.restaurants[0].info.cuisines);
-        console.log("fetched data before setbodyfaData" , fetchedDataJson.data.cards[4].card.card.gridElements.infoWithStyle.restaurants)
-        setBodyfaData(...[fetchedDataJson.data.cards[4].card.card.gridElements.infoWithStyle.restaurants]);
-        console.log("bodyfadata is" , bodyfaData);
-        console.log("second id is " , bodyfaData[1].info.id);
+        const arr = fetchedDataJson.data.cards[4].card.card.gridElements.infoWithStyle.restaurants;
+        setInitialBodyfaData(...[arr]);
+        setBodyfaData(...[arr]);
     }
 
 
     const handleTopResBtn = () => {
-        const refinefaData = bodyfaData.filter((restaurent => restaurent.data.avgRating >= 4.0)); setBodyfaData(refinefaData);
+        const refinefaData = bodyfaData.filter((restaurent => restaurent.info.avgRating >= 4.0));
+        setBodyfaData(refinefaData);
     }
 
     const handleAllResBtn = () =>{
+        setBodyfaData(...[initialBodyfaData]);
     }
 
     while(bodyfaData.length > 0){
