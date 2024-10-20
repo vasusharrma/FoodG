@@ -45,3 +45,10 @@
 *   -Links
 *   -Contact
     */
+
+# ADDED A FAKE UI 
+- we added some fake cards
+- these cards also known as shimmer UI
+- it gives the better UX  
+- user anticipate something is loading 
+- Usere don't think that our web app is slow

@@ -9,6 +9,23 @@
     font-weight: bolder;
 }
 
+.loading_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.fui{
+    color:#f0f0f0;
+    background: #f0f0f0;
+}
+
+.fui_card{
+    filter:drop-shadow(0px 0px 0px rgba(0, 0, 0, 0)) !important;
+}
+
+
 .header{
     display: flex;
     justify-content: space-between;

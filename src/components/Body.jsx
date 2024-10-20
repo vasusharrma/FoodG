@@ -1,7 +1,7 @@
-import React from "react";
-import Cards from "./Cards";
-import faData from "../utils/Data.js";
+import React from "react"; import Cards from "./Cards";
 import {useState , useEffect} from "react";
+import FakeUI from "./FakeUI";
+
 const Body = () => {
 
     const[bodyfaData , setBodyfaData] = useState([]);
@@ -15,7 +15,8 @@ const Body = () => {
     const fetchCards = async () =>{
         const fetchedData = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.65420&lng=77.23730&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING ");
         const fetchedDataJson = await fetchedData.json();
-        const arr = fetchedDataJson.data.cards[4].card.card.gridElements.infoWithStyle.restaurants;
+
+        const arr = fetchedDataJson?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
         setInitialBodyfaData(...[arr]);
         setBodyfaData(...[arr]);
     }
@@ -29,9 +30,33 @@ const Body = () => {
     const handleAllResBtn = () =>{
         setBodyfaData(...[initialBodyfaData]);
     }
-
-    while(bodyfaData.length > 0){
+    if(bodyfaData.length === 0){
         return(
+            <div className="fa_body">
+                <div className="fa_serach">
+                    <div className="topResBtnDiv">
+                        <button className='topResBtn resBtn'>Top Rated Restaurents</button>
+                    </div>
+                    <div className='allResBtnDiv'>
+                        <button className='allResBtn resBtn'>All Top Restaurents</button>
+                    </div>
+                </div>
+                <div className="fa_container">
+                    <FakeUI/>
+                    <FakeUI/>
+                    <FakeUI/>
+                    <FakeUI/>
+                    <FakeUI/>
+                    <FakeUI/>
+                    <FakeUI/>
+                    <FakeUI/>
+                    <FakeUI/>
+                    <FakeUI/>
+                </div>
+            </div>
+        )
+    } else {
+        return (
             <div className="fa_body">
                 <div className="fa_serach">
                     <div className="topResBtnDiv">
@@ -49,9 +74,6 @@ const Body = () => {
             </div>
         )
     }
-
-    return;
-
 
 }
 
