@@ -1,19 +1,32 @@
 import React from "react";
+import FakeCards from "./fakeCards.jsx";
 
 const FakeUI = () => {
 
 
-    return(
-        <div className="fa_card  fui_card">
-            <div className="fa_card_img fui">
-
+    return (
+        <div className="fa_body">
+            <div className="fa_serach">
+                <div className="searchBtn">
+                </div>
+                <div className="topResBtnDiv">
+                    <button className='topResBtn resBtn'>Top Restaurents</button>
+                </div>
+                <div className='allResBtnDiv'>
+                    <button className='allResBtn resBtn'>All Restaurents</button>
+                </div>
             </div>
-            <h3 className='fui'>props.resData</h3>
-            <h5 className='fui'>props.resData..join(', ')</h5>
-            <h4 className='fui'>props.resData.costForTwo</h4>
-            <div className="fa_card_ratings">
-                <h5 className='fui'>. ⋆ </h5>
-                <h5 className='fui'>3 minutes</h5>
+            <div className="fa_container">
+               <FakeCards />
+                <FakeCards />
+                <FakeCards />
+                <FakeCards />
+                <FakeCards />
+                <FakeCards />
+                <FakeCards />
+                <FakeCards />
+                <FakeCards />
+                <FakeCards />
             </div>
         </div>
     )

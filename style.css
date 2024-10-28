@@ -48,8 +48,32 @@
 .header-nav-items ul{
     display: flex;
     gap: 3rem;
-    font-size: 1.4rem;
     list-style-type: none;
+}
+
+.header-nav-items ul li{
+   transition: 0.4s;
+    font-size: 1.3rem;
+    cursor: pointer;
+    font-weight: bolder;
+}
+
+.header-nav-items ul li:hover{
+    transform:scale(0.9);
+}
+
+.login_btn{
+    border:none;
+    background-color:#ee6d41;
+    color:white;
+    font-weight: bolder;
+    font-size: 1.3rem;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.login_btn:hover{
+    transform: scale(0.9);
 }
 
 .fa_body{

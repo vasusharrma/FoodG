@@ -1,6 +1,16 @@
 import React from "react";
 import AppLogo from "../utils/constant";
+import {useState} from "react";
+
+
 const Header = () => {
+
+   const [inOutBtn , setInOutBtn] = useState("Login");
+
+   const inOutBtnHandler = () => {
+       inOutBtn === "Login"? setInOutBtn("Logout"):setInOutBtn("Login");
+   }
+
     return (
         <div className='header'>
             <div className='header-logo'>
@@ -12,6 +22,7 @@ const Header = () => {
                     <li>Contact Us</li>
                     <li>About Us</li>
                     <li>Cart</li>
+                    <button className='login_btn' onClick={inOutBtnHandler}>{inOutBtn}</button>
                 </ul>
             </div>
         </div>

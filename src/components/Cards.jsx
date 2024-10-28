@@ -2,7 +2,6 @@ import React from "react";
 import {CardImageLink} from '../utils/constant.js';
 
 const Cards = (props) => {
-    console.log(props);
     return(
         <div className="fa_card">
             <div className="fa_card_img">
