@@ -94,8 +94,15 @@
     alignitems: center;
 }
 
-.topResBtnDiv{
 
+
+#fa_search_btn_input{
+    margin-right:1rem;
+    padding:0.8rem 1.2rem;
+    border:none;
+}
+
+.topResBtnDiv{
     display: flex;
     justify-content: center;
 }
@@ -108,6 +115,7 @@
     position: relative;
     transition: all linear 300ms;
 }
+
 
 .resBtn:hover{
     background-color: #ee6d41;

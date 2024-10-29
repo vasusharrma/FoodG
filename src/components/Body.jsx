@@ -18,7 +18,7 @@ const Body = () => {
         const fetchedData = await fetch(`https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.65420&lng=77.23730&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING `);
         const fetchedDataJson = await fetchedData.json();
 
-        const arr = fetchedDataJson?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
+        const arr = fetchedDataJson?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
         setInitialBodyfaData(...[arr]);
         setBodyfaData(...[arr]);
         console.log(bodyfaData);
@@ -26,7 +26,7 @@ const Body = () => {
 
 
     const handleTopResBtn = () => {
-        const refinefaData = bodyfaData.filter((restaurent => restaurent.info.avgRating > 4.2));
+        const refinefaData = initialBodyfaData.filter((restaurent => restaurent.info.avgRating > 4.2));
         setBodyfaData(refinefaData);
     }
 
@@ -41,12 +41,17 @@ const Body = () => {
             <div className="fa_body">
                 <div className="fa_serach">
                     <div className="search_btn">
-                        <input type='text'  value={searchRes} for='search' onChange={(e) =>{
+                        <input type='text' id='fa_search_btn_input'  value={searchRes} for='search' onChange={(e) =>{
                            setSearchRes(e.target.value);
                         }} />
-                        <button  id='fa_search_label' onClick = {() => {
+                        <button   id='fa_search_btn' className='resBtn' onClick = {() => {
 
-                            const refineData = bodyfaData.filter((restaurent) => restaurent?.info?.name.toLowerCase().includes(searchRes.toLowerCase()));
+                            const refineData = initialBodyfaData.filter((restaurent) => restaurent?.info?.name.toLowerCase().includes(searchRes.toLowerCase()));
+                            setSearchRes("");
+                            if(refineData.length === 0){
+                                console.log("No restaurent found ");
+                               return;
+                            }
                             setBodyfaData(refineData);
                         }}>Search</button>
                     </div>
