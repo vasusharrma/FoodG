@@ -1,11 +1,18 @@
 import React from "react";
 import AppLogo from "../utils/constant";
-import {useState} from "react";
+import {useState  , useEffect} from "react";
 
 
 const Header = () => {
 
    const [inOutBtn , setInOutBtn] = useState("Login");
+
+   console.log("Header Rendered");
+
+   useEffect(() => {
+       console.log("useEffect called");
+   } , [inOutBtn]);
+
 
    const inOutBtnHandler = () => {
        inOutBtn === "Login"? setInOutBtn("Logout"):setInOutBtn("Login");
