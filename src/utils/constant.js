@@ -4,6 +4,10 @@
  // export const geocodeURL = `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(locationName)}`;
 export default AppLogo;
 
+
+ // api to get city latitude and longitude
+ // const getlonlat =  await fetch(`https://nominatim.openstreetmap.org/search?q=${cityClick}&format=json&limit=1
+
 // This is for body cards api to change the api data according to corrdinates
 
 

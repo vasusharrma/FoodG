@@ -1,6 +1,7 @@
 import React from "react";
 import AppLogo from "../utils/constant";
 import {useState  , useEffect} from "react";
+import {Link} from "react-router-dom";
 
 
 const Header = () => {
@@ -25,10 +26,10 @@ const Header = () => {
             </div>
             <div className='header-nav-items'>
                 <ul>
-                    <li>Home</li>
-                    <li>Contact Us</li>
-                    <li>About Us</li>
-                    <li>Cart</li>
+                    <li><Link to='/'>Home</Link></li>
+                    <li><Link to='/contact'>Contact Us</Link></li>
+                    <li><Link to='/about'>About Us</Link></li>
+                    <li><Link to='/cart'>Cart</Link></li>
                     <button className='login_btn' onClick={inOutBtnHandler}>{inOutBtn}</button>
                 </ul>
             </div>
