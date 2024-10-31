@@ -1,21 +1,25 @@
 import React from "react"; import Cards from "./Cards";
 import {useState , useEffect} from "react";
 import FakeUI from "./FakeUI";
+import SearchCity from "./SearchCity.jsx";
 
 const Body = () => {
 
     const[bodyfaData , setBodyfaData] = useState([]);
     const[initialBodyfaData , setInitialBodyfaData] = useState([]);
     const[searchRes , setSearchRes ] = useState("");
+    const[currCity , setCurrCity] = useState([29.967157 , 77.552391]);
 
 
     useEffect(()=>{
         fetchCards();
-    } , []);
+    } , [currCity]);
 
 
     const fetchCards = async () =>{
-        const fetchedData = await fetch(`https://www.swiggy.com/dapi/restaurants/list/v5?lat=19.0759837&lng=72.8776559&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING `);
+        console.log("currcity is : " , currCity);
+        // const fetchedData = await fetch(`https://www.swiggy.com/dapi/restaurants/list/v5?lat=29.967157&lng=77.552391&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING `);
+        const fetchedData = await fetch(`https://www.swiggy.com/dapi/restaurants/list/v5?lat=${currCity[0]}&lng=${currCity[1]}&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING `);
         const fetchedDataJson = await fetchedData.json();
 
         const arr = fetchedDataJson?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
@@ -61,6 +65,7 @@ const Body = () => {
                     <div className='allResBtnDiv'>
                         <button className='allResBtn resBtn' onClick={handleAllResBtn}>All  Restaurents</button>
                     </div>
+                    <SearchCity setCurrCity={setCurrCity}/>
                 </div>
                 <div className="fa_container">
                     {
