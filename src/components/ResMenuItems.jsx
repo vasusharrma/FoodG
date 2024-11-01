@@ -4,7 +4,7 @@ import {p} from "caniuse-lite/dist/lib/supported.js";
 
 const ResMenuItems = (props) => {
 
-    const{menuInfo} = props;
+    const{menuInfo , key} = props;
 
     const descFull = menuInfo?.description;
     const descSub = `${menuInfo?.description?.substring(0,135)}  `

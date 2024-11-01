@@ -3,6 +3,7 @@
     min-height: 100vh;
 }
 
+
 .inactive{
     display:none;
 }
@@ -18,6 +19,7 @@
     color: #ee6d41;
     font-weight: bolder;
 }
+
 
 .loading_container {
     display: flex;
@@ -49,6 +51,9 @@
     height:6rem;
 }
 
+
+
+
 .header-logo img{
     height: 100%;
     width: 100%;
@@ -67,6 +72,12 @@
     cursor: pointer;
     font-weight: bolder;
 }
+
+.header-link{
+    text-decoration: none;
+    color:white;
+}
+
 
 .header-nav-items ul li:hover{
     transform:scale(0.9);
@@ -133,7 +144,10 @@
 }
 
 
-.fa_card{
+
+.body_link{
+    text-decoration: none;
+    color:black;
     width:18rem;
     background-color:white;
     border-radius: 0.5rem;
@@ -141,6 +155,20 @@
     filter: drop-shadow(0 0.2rem 0.25rem rgba(0, 0, 0, 0.2));
     transition: all linear 0.4s;
 }
+
+.body_link:hover{
+    cursor:pointer;
+    /*outline:1px solid gray;*/
+    transform:scale(1.01);
+    box-shadow: 0 0.2rem 0.25rem rgba(0, 0, 0, 0.2);
+}
+
+
+.fa_card{
+    width: 100%;
+    height: 100%;
+}
+
 
 .fa_card_img{
     height:12rem;
@@ -156,12 +184,6 @@
     justify-content: space-between;
 }
 
-.fa_card:hover{
-    cursor:pointer;
-    /*outline:1px solid gray;*/
-    transform:scale(1.01);
-    box-shadow: 0 0.2rem 0.25rem rgba(0, 0, 0, 0.2);
-}
 
 .resmenu_out_outside{
     background: white;
@@ -230,16 +252,28 @@
 
 .resitems_img{
     width:30%;
+    height:30%;
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
 }
 
+.resitems_img_inside{
+    width:150px;
+    height:150px;
+}
+
+.resitems_img_inside  img{
+    width: 100%;
+    height: 100%;
+    border-radius:2rem;
+}
+
 
 .resitems_Btn{
     position:absolute;
-    bottom: 33px;
+    bottom: 10px;
     background: white;
     border: 1px solid gray;
     padding: 0.6rem 1.2rem;

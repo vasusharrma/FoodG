@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import ReactDOM from 'react-dom/client';
 import Header from './components/Header';
 import About from './components/About';
@@ -10,9 +10,12 @@ import ResMenu from "./components/ResMenu.jsx";
 
 
 const App = () =>{
+    const[currLocation , setCurrLocation] = useState("Saharanpur");
+
+
     return (
         <div className="app">
-            <Header/>
+            <Header />
             <Outlet/>
         </div>
     )
@@ -41,7 +44,8 @@ const appRouter = createBrowserRouter([
             },
             {
                 path:'/restaurants/:resId',
-                element:<ResMenu />
+                element:<ResMenu />,
+                errorElement:<Error/>
             }
 
         ],

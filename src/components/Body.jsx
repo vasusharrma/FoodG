@@ -1,6 +1,7 @@
 import React from "react"; import Cards from "./Cards";
 import {useState , useEffect} from "react";
 import FakeUI from "./FakeUI";
+import {Link} from "react-router-dom";
 import SearchCity from "./SearchCity.jsx";
 
 const Body = () => {
@@ -66,7 +67,7 @@ const Body = () => {
                 </div>
                 <div className="fa_container">
                     {
-                        bodyfaData?.map((restaurant) => (<Cards key={restaurant.info.id} resData={restaurant.info} />))
+                        bodyfaData?.map((restaurant) => (<Link className="body_link"  key={restaurant.info.id}  to={`/restaurants/${restaurant.info.id}` }><Cards resData={restaurant.info} /></Link>))
                     }
                 </div>
             </div>
