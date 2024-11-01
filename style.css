@@ -185,17 +185,50 @@
     width: 100%;
     justify-content: space-between;
     gap:1rem;
+    padding-top:1.4rem;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.52);
 }
 
 .resitems_des{
-    width: 65%;
+    width: 70%;
 }
 
 .resitems_img{
-    width:35%;
+    width:30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+
+.resitems_Btn{
+    position:absolute;
+    bottom: 33px;
+    background: white;
+    border: 1px solid gray;
+    padding: 0.6rem 1.2rem;
+    font-size: 1.2rem;
+    font-weight: bolder;
+    color: green;
+    border-radius: 0.4rem;
+    cursor:pointer;
+    border-top: none;
 }
 
 .resitems_img_inside > img{
     object-fit: cover;
-    width: 100%;
+    width:100%;
+
+}
+
+#resItem_span{
+    color:#ee6d41;
+    font-weight: bolder;
+    cursor: pointer !important;
+}
+
+.resitems_aggregated{
+    font-size: 0.8rem;
+    font-weight: bolder;
 }
