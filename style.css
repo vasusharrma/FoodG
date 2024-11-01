@@ -3,6 +3,17 @@
     min-height: 100vh;
 }
 
+.inactive{
+    display:none;
+}
+
+
+.rotate{
+    transform: rotate(180deg);
+}
+
+
+
 .theme_accent{
     color: #ee6d41;
     font-weight: bolder;
@@ -154,6 +165,7 @@
 
 .resmenu_out_outside{
     background: white;
+    min-height: 100vh;
     width: 100%;
 }
 
@@ -164,6 +176,29 @@
     background-color:#ffffff;
     padding:1.3rem;
 
+}
+
+
+.resmenu_recomended_second{
+    display: flex;
+    justify-content: space-between;
+    padding-right:2rem;
+    align-items: center;
+}
+
+.resmenu_clope{
+    font-size: 1.5rem;
+    font-weight: bolder;
+    color: #ee6d41;
+    cursor: pointer !important;
+}
+
+.resmenu_line{
+    height:1.4rem;
+    border-radius: 0.5rem;
+    background-color: rgba(157, 155, 155, 0.24);
+
+    margin-block: 1.8rem;
 }
 
 .res_details_inside{
@@ -229,6 +264,5 @@
 }
 
 .resitems_aggregated{
-    font-size: 0.8rem;
-    font-weight: bolder;
+    color:rgb(17, 102, 73);
 }

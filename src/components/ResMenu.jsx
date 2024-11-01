@@ -1,11 +1,12 @@
 import {useState , useEffect} from 'react';
 import FakeUI from "./FakeUI.jsx";
 import ResMenuItems from "./ResMenuItems";
+import ResMenuHandler from "./ResMenuHandler";
+
 
 const ResMenu = () => {
     const[resInfo , setResInfo] = useState(null);
     const[initialResInfo , setInitialResInfo] = useState([]);
-
 
 
     useEffect(() => {
@@ -26,8 +27,31 @@ const ResMenu = () => {
 
 
     const{ name, sla , avgRating, costForTwoMessage , totalRatingsString , cuisines} = resInfo?.data?.cards[2]?.card?.card?.info;
-    const{itemCards} = resInfo?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card;
-    console.log("items is " , itemCards);
+    const cardRecom = resInfo?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card;
+    const card99  = resInfo?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[3]?.card?.card;
+    const card139 = resInfo?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[3]?.card?.card;
+
+    const card169 = resInfo?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[5]?.card?.card;
+    const cardCMD = resInfo?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[6]?.card?.card;
+    const cardCST = resInfo?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[7]?.card?.card;
+    const card8 = resInfo?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[8]?.card?.card;
+    const card9 = resInfo?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[9]?.card?.card;
+    const card10 = resInfo?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[10]?.card?.card;
+    const card11 = resInfo?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[11]?.card?.card;
+    // const card12 = resInfo?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[12]?.card?.card;
+    // const card13 = resInfo?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[13]?.card?.card;
+    // const card14 = resInfo?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[14]?.card?.card;
+    // const card15 = resInfo?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[15]?.card?.card;
+
+
+
+    const cardArr = [
+        cardRecom , card99 , card139 , card169 , cardCMD , cardCST , card8, card9, card10 , card11,
+    ];
+
+    const newArr = cardArr.map((i) => i);
+    console.log("arr is the " , newArr);
+
     return(
         <div className="resmenu_out_outside">
             <div className="resmenu_outside">
@@ -41,12 +65,10 @@ const ResMenu = () => {
                         </div>
                     </div>
                 </div>
-                <div className="resmenu_recomended">
-                    <h4>Recommended({itemCards.length})</h4>
-                    <div className="resmenu_div">
-                        {itemCards.map((it)=>(<ResMenuItems menuInfo = {it?.card?.info} key={it?.card?.info?.id}/>))}
-                    </div>
-                </div>
+                {
+                    // <ResMenuHandler itemCards={cardRecom.itemCards} title={cardRecom.title} />
+                    cardArr.map((i) => <ResMenuHandler itemCards={i.itemCards}  title={i.title} />)
+                }
             </div>
         </div>
     )

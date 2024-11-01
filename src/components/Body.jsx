@@ -8,7 +8,7 @@ const Body = () => {
     const[bodyfaData , setBodyfaData] = useState([]);
     const[initialBodyfaData , setInitialBodyfaData] = useState([]);
     const[searchRes , setSearchRes ] = useState("");
-    const[currCity , setCurrCity] = useState([29.967157 , 77.552391]);
+    const[currCity , setCurrCity] = useState([30.015538499999998 , 77.60388038805745]);
 
 
     useEffect(()=>{
@@ -17,15 +17,12 @@ const Body = () => {
 
 
     const fetchCards = async () =>{
-        console.log("currcity is : " , currCity);
         // const fetchedData = await fetch(`https://www.swiggy.com/dapi/restaurants/list/v5?lat=29.967157&lng=77.552391&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING `);
         const fetchedData = await fetch(`https://www.swiggy.com/dapi/restaurants/list/v5?lat=${currCity[0]}&lng=${currCity[1]}&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING `);
         const fetchedDataJson = await fetchedData.json();
-
         const arr = fetchedDataJson?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
         setInitialBodyfaData(...[arr]);
         setBodyfaData(...[arr]);
-        console.log(bodyfaData);
     }
 
 
