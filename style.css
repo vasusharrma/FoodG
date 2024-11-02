@@ -205,13 +205,13 @@
     display: flex;
     justify-content: space-between;
     padding-right:2rem;
+    color: #ee6d41;
     align-items: center;
 }
 
 .resmenu_clope{
     font-size: 1.5rem;
     font-weight: bolder;
-    color: #ee6d41;
     cursor: pointer !important;
 }
 
@@ -282,7 +282,6 @@
     color: green;
     border-radius: 0.4rem;
     cursor:pointer;
-    border-top: none;
 }
 
 .resitems_img_inside > img{

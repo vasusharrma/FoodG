@@ -7,7 +7,7 @@ const ResMenuItems = (props) => {
     const{menuInfo , key} = props;
 
     const descFull = menuInfo?.description;
-    const descSub = `${menuInfo?.description?.substring(0,135)}  `
+    const descSub = `${menuInfo?.description?.substring(0,100)}  `
     const[mlBtn , setmlBtn] = useState('more');
     const[resDesc , setResDesc] = useState(descSub);
 
@@ -31,17 +31,27 @@ const ResMenuItems = (props) => {
 
                  }</h5>
                  {
-                     (resDesc)?(<p className='resItem_des_diff'>{resDesc}
-                         <span id='resItem_span' onClick={handleSpan}>...{mlBtn}</span>
-                     </p>):(<p></p>)
+                     (descFull) ?(
+                         (descFull?.length > 100)?(
+                             <p className='resItem_des_diff'>{resDesc}
+                                 <span id='resItem_span' onClick={handleSpan}>...{mlBtn}</span>
+                             </p>):(<p className='resItem_des_diff'>{descFull}</p>)
+                     ):<p></p>
+
                  }
 
              </div>
            <div className="resitems_img">
-               <div className="resitems_img_inside">
-                   <img src={CardImageLink.concat(menuInfo?.imageId)}/>
-               </div>
+               {
+                   (menuInfo?.imageId !== undefined && menuInfo?.imageId !== null) ?
+                       (<div className="resitems_img_inside">
+                               <img src={CardImageLink.concat(menuInfo?.imageId)}/>
+                           </div>
+                       ) :<div className="resitems_img_inside"></div>
+               }
+
                <button className='resitems_Btn'>Add</button>
+
            </div>
        </div>
     )
