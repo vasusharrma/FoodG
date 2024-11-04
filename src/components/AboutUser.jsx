@@ -31,7 +31,7 @@ class AboutUser extends Component{
 
 
     }
-
+    //
     render(){
 
         const {name , bio , location , avatar_url } = this.state.userInfo;
