@@ -6,6 +6,7 @@ const ResMenuItems = (props) => {
 
     const{menuInfo , key} = props;
 
+
     const descFull = menuInfo?.description;
     const descSub = `${menuInfo?.description?.substring(0,100)}  `
     const[mlBtn , setmlBtn] = useState('more');

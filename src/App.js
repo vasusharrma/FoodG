@@ -10,7 +10,6 @@ import ResMenu from "./components/ResMenu.jsx";
 
 
 const App = () =>{
-    const[currLocation , setCurrLocation] = useState("Saharanpur");
 
 
     return (

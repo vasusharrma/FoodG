@@ -65,6 +65,7 @@
     "htmlnano": "^2.1.1",
     "htmlparser2": "^7.2.0",
     "import-fresh": "^3.3.0",
+    "install": "^0.13.0",
     "is-arrayish": "^0.2.1",
     "is-extglob": "^2.1.1",
     "is-glob": "^4.0.3",
